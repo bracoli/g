@@ -61,14 +61,6 @@ echo -ne "Select menu : "; read x
        v2ray-menu
     elif [[ $x -eq 3 ]]; then
        trojan-menu
-    elif [[ $x -eq 4 ]]; then
-       wg-menu
-    elif [[ $x -eq 5 ]]; then
-       sstp-menu
-    elif [[ $x -eq 6 ]]; then
-       ipsec-menu
-    elif [[ $x -eq 7 ]]; then
-       ss-menu
     elif [[ $x -eq 55 ]]; then
        trial-menu
     elif [[ $x -eq 66 ]]; then
