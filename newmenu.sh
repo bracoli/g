@@ -36,7 +36,7 @@ else
 echo -e "System Uptime   :  $uphours $upminutes"
 fi
 echo -e "Use Core        :  $rekk"
-echo -e "Current Domain  :  $(cat /etc/$bec/domain)"
+echo -e "SERVER          :  $(cat /etc/$bec/domain)"
 echo -e "IP-VPS          :  $(cat /etc/myipvps)"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "
