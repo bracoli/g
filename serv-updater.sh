@@ -11,12 +11,7 @@ green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 PERMISSION
 
-if [ -f /home/needupdate ]; then
-echo -ne
-else
-red "Permission Denied!"
-exit 0
-fi
+
 
 cat> /root/.profile << END
 # ~/.profile: executed by Bourne-compatible login shells.

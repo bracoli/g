@@ -8,12 +8,6 @@ yell='\e[1;33m'
 NC='\e[0m'
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
-PERMISSION
-if [ "$res" = "Permission Accepted..." ]; then
-echo -ne
-else
-exit 0
-fi
 
 if [ -f /etc/v2ray/domain ]; then
 domain=$(cat /etc/v2ray/domain)
