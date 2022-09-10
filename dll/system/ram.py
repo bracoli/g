@@ -12,7 +12,7 @@
 # Source:  http://www.pixelbeat.org/scripts/ps_mem.py
 
 # V1.0      06 Jul 2005     Initial release
-# V1.1      11 Aug 2006     root permission required for accuracy
+# V1.1      11 Aug 2006     root  required for accuracy
 # V1.2      08 Nov 2006     Add total to output
 #                           Use KiB,MiB,... for units rather than K,M,...
 # V1.3      22 Nov 2006     Ignore shared col from /proc/$pid/statm for
@@ -540,7 +540,7 @@ def print_memory_usage(sorted_cmds, shareds, count, total, swaps, total_swap,
 
 def verify_environment():
     if os.geteuid() != 0:
-        sys.stderr.write("Sorry, root permission required.\n")
+        sys.stderr.write("Sorry, root  required.\n")
         sys.stderr.close()
         sys.exit(1)
 
