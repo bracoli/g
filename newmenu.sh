@@ -6,6 +6,8 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 x="ok"
 muse=`free -m | grep "Mem" | awk '{print $3}'`
 mfree=`free -m | grep "Mem" | awk '{print $4}'`
+today=`vnstat --oneline |  awk '{print $3}' | awk -F";" '{ print $NF }'`
+month=`sudo vnstat --oneline |  awk '{print $8}' | awk -F";" '{ print $NF }'`
 cekray=`cat /root/log-install.txt | grep -ow "XRAY" | sort | uniq`
 if [ "$cekray" = "XRAY" ]; then
 rekk='XRAY'
@@ -39,7 +41,11 @@ fi
 echo -e "Use Core        :  $rekk"
 echo -e "SERVER          :  $(cat /etc/$bec/domain)"
 echo -e "IP-VPS          :  $(cat /etc/myipvps)"
-echo -e "Memory Total    : Free = $mfree | Used = $Muse" 
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "
+echo -e "Bandwidth Used  : Today = $today | T/Month = $month"
+echo -e "Memory          : Free = $mfree | Used = $muse" 
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "
  [\033[1;36m01\033[0m] • SSH & OVPN
