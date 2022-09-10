@@ -30,8 +30,6 @@ uphours=`uptime -p | awk '{print $2,$3}' | cut -d , -f1`
 upminutes=`uptime -p | awk '{print $4,$5}' | cut -d , -f1`
 uptimecek=`uptime -p | awk '{print $6,$7}' | cut -d , -f1`
 cekup=`uptime -p | grep -ow "day"`
-serverV=$( curl -sS https://raw.githubusercontent.com/apih46/access/main/versi)
-
 if [ "$cekup" = "day" ]; then
 echo -e "System Uptime   :  $uphours $upminutes $uptimecek"
 else
@@ -44,7 +42,7 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 echo -e "
  [\033[1;36m01\033[0m] • SSH & OVPN
  [\033[1;36m02\033[0m] • $rekk : VMess / VLess
- [\033[1;36m03\033[0m] • TROJAN-GFW & GO
+ [\033[1;36m03\033[0m] • TROJAN-GFW
 
  [\033[1;36m55\033[0m] • Trial Generator
  [\033[1;36m66\033[0m] • Logs User Created
@@ -55,35 +53,8 @@ echo -e "
  [\033[1;36m100\033[0m] • SYSTEM / Admin [ Menu ]
  [\033[1;36m700\033[0m] • Bot-Panel $sts
 "
-if [[ $(cat /opt/.ver) = $serverV ]] > /dev/null 2>&1; then
-echo -ne
-else
-echo -e "[\033[1;32m999\033[0m] • \033[0;31mUpdate Available ! Go choice 999 to update\033[0m"
-echo ""
-fi
-echo -e "\033[1;37mPress [ Ctrl+C ] • To-Exit-Script\033[0m"
-echo ""
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-if [[ $(cat /opt/.ver) = $serverV ]] > /dev/null 2>&1; then
-echo -e "Version       :\033[1;36m $(cat /opt/.ver) Latest Version\e[0m"
-echo -e "Client Name   : $Name"
-echo -e "Expiry script : $Exp"
-rm -f /home/needupdate > /dev/null 2>&1
-else
-rm /dev/.permiss > /dev/null 2>&1
-touch /home/needupdate > /dev/null 2>&1
-echo -e "\033[0;33mVersion : $(cat /opt/.ver) Update available to $serverV\e[0m"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo ""
-echo -e "[ \033[0;31mChangelog\033[0m ]"
-curl -sS https://raw.githubusercontent.com/bracoli/g/main/clgshow
-echo -e "
-"
-fi
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo
 echo -ne "Select menu : "; read x
-if [[ $(cat /opt/.ver) = $serverV ]] > /dev/null 2>&1; then
     if [[ $x -eq 1 ]]; then
        ssh-menu
     elif [[ $x -eq 2 ]]; then
@@ -107,45 +78,6 @@ if [[ $(cat /opt/.ver) = $serverV ]] > /dev/null 2>&1; then
        menu
     elif [[ $x -eq 77 ]]; then
        setting-menu
-    elif [[ $x -eq 88 ]]; then
-       autokill-menu
-    elif [[ $x -eq 99 ]]; then
-       info-menu
-    elif [[ $x -eq 100 ]]; then
-       system-menu
-    elif [[ $x -eq 700 ]]; then
-       installbot
-    else
-       menu
-    fi
-else
-    if [[ $x -eq 999 ]]; then
-       wget -q -O /usr/bin/update-script "https://raw.githubusercontent.com/bracoli/g/main/dll/system/update-script.sh" && chmod +x /usr/bin/update-script
-       screen -S upds update-script
-       menu
-    elif [[ $x -eq 1 ]]; then
-       ssh-menu 
-    elif [[ $x -eq 2 ]]; then
-       v2ray-menu
-    elif [[ $x -eq 3 ]]; then
-       trojan-menu
-    elif [[ $x -eq 4 ]]; then
-       wg-menu
-    elif [[ $x -eq 5 ]]; then
-       sstp-menu
-    elif [[ $x -eq 6 ]]; then
-       ipsec-menu
-    elif [[ $x -eq 7 ]]; then
-       ss-menu
-    elif [[ $x -eq 55 ]]; then
-       trial-menu
-    elif [[ $x -eq 66 ]]; then
-       clear
-       cat /etc/log-create-user.log
-       read -n 1 -s -r -p "Press any key to back on menu"
-       menu
-    elif [[ $x -eq 77 ]]; then
-       setting-menu 
     elif [[ $x -eq 88 ]]; then
        autokill-menu
     elif [[ $x -eq 99 ]]; then
