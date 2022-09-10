@@ -4,7 +4,8 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 x="ok"
-
+muse=`free -m | grep "Mem" | awk '{print $3}'`
+mfree=`free -m | grep "Mem" | awk '{print $4}'`
 cekray=`cat /root/log-install.txt | grep -ow "XRAY" | sort | uniq`
 if [ "$cekray" = "XRAY" ]; then
 rekk='XRAY'
@@ -38,6 +39,7 @@ fi
 echo -e "Use Core        :  $rekk"
 echo -e "SERVER          :  $(cat /etc/$bec/domain)"
 echo -e "IP-VPS          :  $(cat /etc/myipvps)"
+echo -e "Memory Total    : Free = $mfree | Used = $Muse" 
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "
  [\033[1;36m01\033[0m] • SSH & OVPN
