@@ -185,7 +185,7 @@ zipRoot() {
 downloadV2Ray(){
     rm -rf /tmp/$KEY_LOWER
     mkdir -p /tmp/$KEY_LOWER  
-    DOWNLOAD_LINK="https://github.com/XTLS/Xray-core/releases/download/v1.4.5/Xray-linux-64.zip"
+    DOWNLOAD_LINK="https://github.com/XTLS/Xray-core/releases/download/v1.5.5/Xray-linux-64.zip"
     colorEcho ${BLUE} "Downloading $KEY: ${DOWNLOAD_LINK}"
     curl ${PROXY} -L -H "Cache-Control: no-cache" -o ${ZIPFILE} ${DOWNLOAD_LINK}
     if [ $? != 0 ];then
