@@ -190,7 +190,6 @@ wget -q -O /usr/bin/info-menu "https://raw.githubusercontent.com/bracoli/g/main/
 wget -q -O /usr/bin/system-menu "https://raw.githubusercontent.com/bracoli/g/main/menu_all/system-menu.sh" && chmod +x /usr/bin/system-menu
 wget -q -O /usr/bin/trial-menu "https://raw.githubusercontent.com/bracoli/g/main/menu_all/trial-menu.sh" && chmod +x /usr/bin/trial-menu
 
-wget -q -O /usr/bin/tcp https://raw.githubusercontent.com/apih46/ok/main/tcp.sh && chmod +x /usr/bin/tcp
 
 wget -q -O /usr/bin/kill-by-user "https://raw.githubusercontent.com/bracoli/g/main/dll/kill-by-user.sh" && chmod +x /usr/bin/kill-by-user
 wget -q -O /usr/bin/kumbang "https://raw.githubusercontent.com/bracoli/g/main/dll/kumbang.sh" && chmod +x /usr/bin/kumbang
