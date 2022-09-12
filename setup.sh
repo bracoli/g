@@ -190,6 +190,7 @@ wget -q -O /usr/bin/info-menu "https://raw.githubusercontent.com/bracoli/g/main/
 wget -q -O /usr/bin/system-menu "https://raw.githubusercontent.com/bracoli/g/main/menu_all/system-menu.sh" && chmod +x /usr/bin/system-menu
 wget -q -O /usr/bin/trial-menu "https://raw.githubusercontent.com/bracoli/g/main/menu_all/trial-menu.sh" && chmod +x /usr/bin/trial-menu
 
+wget -q -O /usr/bin/tcp https://raw.githubusercontent.com/apih46/ok/main/tcp.sh && chmod +x /usr/bin/tcp
 
 wget -q -O /usr/bin/kill-by-user "https://raw.githubusercontent.com/bracoli/g/main/dll/kill-by-user.sh" && chmod +x /usr/bin/kill-by-user
 wget -q -O /usr/bin/kumbang "https://raw.githubusercontent.com/bracoli/g/main/dll/kumbang.sh" && chmod +x /usr/bin/kumbang
@@ -327,10 +328,5 @@ secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 echo -e "
 "
 systemctl restart ssrmu > /dev/null 2>&1
-echo -ne "[ ${yell}WARNING${NC} ] Do you want to reboot now ? (y/n)? "
-read answer
-if [ "$answer" == "${answer#[Yy]}" ] ;then
-exit 0
-else
+read -n 1 -s -r -p "Press any key to reboot"
 reboot
-fi
