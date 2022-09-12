@@ -37,7 +37,7 @@ sleep 1
 echo -e "[ ${green}INFO$NC ] Enable chrony"
 systemctl enable chrony >/dev/null 2>&1
 systemctl restart chrony >/dev/null 2>&1
-timedatectl set-timezone Asia/Jakarta >/dev/null 2>&1
+timedatectl set-timezone Asia/Kuala_Lumpur >/dev/null 2>&1
 sleep 1
 echo -e "[ ${green}INFO$NC ] Setting chrony tracking"
 chronyc sourcestats -v >/dev/null 2>&1
