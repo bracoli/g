@@ -801,13 +801,6 @@ cat <<EOF >/etc/trojan-go/uuid.txt
 $uuid
 EOF
 
-sleep 1
-echo -e "[ ${green}INFO$NC ] Installing bbr.."
-wget -q -O /usr/bin/bbr "https://raw.githubusercontent.com/bracoli/g/main/dll/bbr.sh"
-chmod +x /usr/bin/bbr
-bbr >/dev/null 2>&1
-rm /usr/bin/bbr >/dev/null 2>&1
-
 sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2096 -j ACCEPT
 sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2087 -j ACCEPT
 sudo iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 445 -j ACCEPT
