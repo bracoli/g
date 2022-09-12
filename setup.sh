@@ -282,9 +282,9 @@ echo "   - V2RAY Vmess None TLS    : 95" | tee -a log-install.txt
 echo "   - V2RAY Vless TLS         : 445" | tee -a log-install.txt
 echo "   - V2RAY Vless None TLS    : 80" | tee -a log-install.txt
 elif [ "$coreselect" = "xray" ]; then
-echo "   - XRAY  Vmess TLS         : 435" | tee -a log-install.txt
+echo "   - XRAY  Vmess TLS         : 443" | tee -a log-install.txt
 echo "   - XRAY  Vmess None TLS    : 95" | tee -a log-install.txt
-echo "   - XRAY  Vless TLS         : 445" | tee -a log-install.txt
+echo "   - XRAY  Vless TLS         : 443" | tee -a log-install.txt
 echo "   - XRAY  Vless None TLS    : 80" | tee -a log-install.txt
 echo "   - XRAY  Vmess Grpc        : 999" | tee -a log-install.txt
 echo "   - XRAY  Vless Grpc        : 880" | tee -a log-install.txt
